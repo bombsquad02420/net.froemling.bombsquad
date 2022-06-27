@@ -24,14 +24,18 @@ modules:
       - install -Dm755 bombsquad.sh /app/bin/bombsquad.sh
     sources:
       - type: archive
-        url: https://files.ballistica.net/bombsquad/builds/BombSquad_Linux_x86_64_1.6.12.tar.gz
-        sha256: 1c61833473f2b3d553b0b4bb5ec1d32c8087b61092d4412993e71527261a517a
+        url: https://files.ballistica.net/bombsquad/builds/BombSquad_Linux_x86_64_1.7.2.tar.gz
+        mirror-urls:
+          - https://files.ballistica.net/bombsquad/builds/old/BombSquad_Linux_x86_64_1.7.2.tar.gz
+        sha256: 90e4cc273f7108a48dbf07397b6c4a38e45712cb77c9d9175b2ddec66881c539
         only-arches:
           - x86_64
 
       - type: archive
-        url: https://files.ballistica.net/bombsquad/builds/BombSquad_Linux_Arm64_1.6.12.tar.gz
-        sha256: 8ea38e22b322b0b010b7af8d5635dbeadc6c22592377882873ec40bf14228037
+        url: https://files.ballistica.net/bombsquad/builds/BombSquad_Linux_Arm64_1.7.2.tar.gz
+        mirror-urls:
+          - https://files.ballistica.net/bombsquad/builds/old/BombSquad_Linux_Arm64_1.7.2.tar.gz
+        sha256: 04269b772a7f556dbfac67f3f40d6d78dd9804997deb044c240e0f81e3591e60
         only-arches:
           - aarch64
 
@@ -50,3 +54,11 @@ modules:
         commands:
           - 'cd /app/bombsquad'
           - './bombsquad'
+
+  - name: cpython
+    config-opts:
+      - --enable-shared
+    sources:
+      - type: archive
+        url: https://www.python.org/ftp/python/3.10.5/Python-3.10.5.tar.xz
+        sha256: 8437efd5b106ef0a75aabfbf23d880625120a73a86a22ade4d2e2e68d7b74486
