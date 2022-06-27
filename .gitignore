@@ -1,0 +1,5 @@
+// flatpak directories
+.flatpak-builder
+
+// local testing
+build-dir

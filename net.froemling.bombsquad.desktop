@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=BombSquad
+Comment=An explosive arcade-style party game
+Exec=bombsquad.sh
+Icon=net.froemling.bombsquad
+Categories=Game;ArcadeGame;
+Terminal=false
+StartupNotify=false

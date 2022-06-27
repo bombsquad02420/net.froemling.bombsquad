@@ -1,0 +1,52 @@
+app-id: net.froemling.bombsquad
+runtime: org.freedesktop.Platform
+runtime-version: '21.08'
+sdk: org.freedesktop.Sdk
+command: bombsquad.sh
+finish-args:
+  - --device=all
+  - --share=ipc
+  - --share=network
+  - --socket=pulseaudio
+  - --socket=wayland
+  - --socket=x11
+  - --filesystem=home/.bombsquad
+modules:
+  - name: bombsquad
+    buildsystem: simple
+    build-commands:
+      - mkdir /app/bombsquad
+      - mv ba_data /app/bombsquad/ba_data
+      - install -Dm755 bombsquad /app/bombsquad/bombsquad
+      - install -Dm644 BombSquadIcon.png /app/share/icons/net.froemling.bombsquad.png
+      - install -Dm644 net.froemling.bombsquad.desktop /app/share/applications/net.froemling.bombsquad.desktop
+      - install -Dm644 net.froemling.bombsquad.metainfo.xml /app/share/metainfo/net.froemling.bombsquad.metainfo.xml
+      - install -Dm755 bombsquad.sh /app/bin/bombsquad.sh
+    sources:
+      - type: archive
+        url: https://files.ballistica.net/bombsquad/builds/BombSquad_Linux_x86_64_1.6.12.tar.gz
+        sha256: 1c61833473f2b3d553b0b4bb5ec1d32c8087b61092d4412993e71527261a517a
+        only-arches:
+          - x86_64
+
+      - type: archive
+        url: https://files.ballistica.net/bombsquad/builds/BombSquad_Linux_Arm64_1.6.12.tar.gz
+        sha256: 8ea38e22b322b0b010b7af8d5635dbeadc6c22592377882873ec40bf14228037
+        only-arches:
+          - aarch64
+
+      - type: file
+        url: https://files.ballistica.net/bombsquad/promo/BombSquadIcon.png
+        sha256: 31f3af8d59a384b7a3ac999d2e8fe0a0033d0d31ae6e760686537ab85d86ba00
+
+      - type: file
+        path: net.froemling.bombsquad.desktop
+
+      - type: file
+        path: net.froemling.bombsquad.metainfo.xml
+
+      - type: script
+        dest-filename: bombsquad.sh
+        commands:
+          - 'cd /app/bombsquad'
+          - './bombsquad'
