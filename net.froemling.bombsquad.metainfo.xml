@@ -48,19 +48,23 @@
   <url type="help">https://github.com/efroemling/ballistica/wiki</url>
 
   <provides>
-    <binary>bombsquad</binary>
+    <binary>bombsquad.sh</binary>
   </provides>
 
   <releases>
-    <release version="1.6.12" date="2022-05-04">
+    <release version="1.7.17" date="2022-12-21">
       <description>
-        More internal work on V2 master-server communication
+        <ul>
+          <li>V2 accounts now show a 'Unlink Legacy (V1) Accounts' button in account settings if they have any old v1 links present. This can be used to clear out old links to replace them with V2 links which work correctly with V2 accounts.</li>
+          <li><code>ba.internal.dump_tracebacks()</code> is now <code>ba.internal.dump_app_state()</code> and <code>ba.internal.log_dumped_tracebacks()</code> is now <code>ba.internal.log_dumped_app_state()</code>. This reflects the fact that these calls may be expanded to include other app state in the future (C++ layer thread states, etc.).</li>
+          <li>Added <code>ba.app.health_monitor</code> which will dump app state if the logic thread ever stops responding for 5+ seconds while the app is running (to help diagnose deadlock situations).</li>
+          <li>Various extra logging and bug fixes related to V2 accounts and master server communication (trying to get this stuff working as smoothly as possible now that it is feature-complete).</li>
+        </ul>
       </description>
     </release>
   </releases>
 
   <content_rating type="oars-1.0">
-    <content_attribute id="violence-cartoon">moderate</content_attribute>
     <content_attribute id="violence-fantasy">moderate</content_attribute>
     <content_attribute id="social-chat">moderate</content_attribute>
     <content_attribute id="money-purchasing">intense</content_attribute>

@@ -24,10 +24,10 @@ modules:
       - install -Dm755 bombsquad.sh /app/bin/bombsquad.sh
     sources:
       - type: archive
-        url: https://files.ballistica.net/bombsquad/builds/BombSquad_Linux_x86_64_1.7.3.tar.gz
+        url: https://files.ballistica.net/bombsquad/builds/BombSquad_Linux_x86_64_1.7.17.tar.gz
         mirror-urls:
-          - https://files.ballistica.net/bombsquad/builds/old/BombSquad_Linux_x86_64_1.7.3.tar.gz
-        sha256: e3cedf97b0ca96dde04706043f514920de1d2a3784bd1705e4ae333731125f13
+          - https://files.ballistica.net/bombsquad/builds/old/BombSquad_Linux_x86_64_1.7.17.tar.gz
+        sha256: 8f87cd572783e75b2fb9ae24c2dc756e386207e7f627ed5872557af79927fa41
         only-arches:
           - x86_64
         x-checker-data:
@@ -37,10 +37,10 @@ modules:
           url-template: https://files.ballistica.net/bombsquad/builds/BombSquad_Linux_x86_64_$version.tar.gz
 
       - type: archive
-        url: https://files.ballistica.net/bombsquad/builds/BombSquad_Linux_Arm64_1.7.3.tar.gz
+        url: https://files.ballistica.net/bombsquad/builds/BombSquad_Linux_Arm64_1.7.17.tar.gz
         mirror-urls:
-          - https://files.ballistica.net/bombsquad/builds/old/BombSquad_Linux_Arm64_1.7.3.tar.gz
-        sha256: cc583915afd2b888dadbb3314617b67c3779886e79734c36e8fd5eaa0f47a04c
+          - https://files.ballistica.net/bombsquad/builds/old/BombSquad_Linux_Arm64_1.7.17.tar.gz
+        sha256: 5aec41f28f13ed4739bf0f295407bbd9e43a9c778f23bb9ae7548ccde3ba0d03
         only-arches:
           - aarch64
         x-checker-data:
